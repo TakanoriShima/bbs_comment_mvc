@@ -8,7 +8,12 @@ class message_util{
     
     // データベースと接続を行うメソッド
     public function get_connection(){
-        $pdo = new PDO(DSN, DB_USERNAME, DB_PASSWORD);
+        $options = array(
+            PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION,        // 失敗したら例外を投げる
+            PDO::ATTR_DEFAULT_FETCH_MODE => PDO::FETCH_CLASS,   //デフォルトのフェッチモードはクラス
+            PDO::MYSQL_ATTR_INIT_COMMAND => 'SET NAMES utf8',   //MySQL サーバーへの接続時に実行するコマンド
+       );
+        $pdo = new PDO(DSN, DB_USERNAME, DB_PASSWORD, $options);
         return $pdo;
     }
     
@@ -128,4 +133,11 @@ class message_util{
             return null;
         }
     }
+    
+    // ファイルをアップロードするメソッド
+//     public function upload($image){
+//         $file = 'upload/' . $image;
+//         // uploadディレクトリにファイル保存
+//         move_uploaded_file($_FILES['image']['tmp_name'], $file);
+//     }
 }

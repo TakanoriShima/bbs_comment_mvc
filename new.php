@@ -23,7 +23,7 @@
             // データベースを扱う便利なインスタンス生成
             $message_util = new message_util();
             // 画像ファイルの物理的アップロード処理
-            $image = $message_util->upload($_FILES);
+            $image = $message_util->upload();
             
             // 新しいメッセージインスタンスを生成
             $message = new message($name, $title, $body, $image, $password);

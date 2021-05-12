@@ -62,7 +62,6 @@ create table messages(
 show tables;
 describe messages;
 
-insert into messages(name, title, body) values("山田", "初めての投稿", "Herokuにデプロイできるかな？");
 select * from messages;
 
 create table comments (
@@ -73,5 +72,6 @@ create table comments (
     created_at timestamp default CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
     foreign key(message_id) references messages(id)
     on delete cascade
-    on update cascade
+    on update cascade,
+    
 ); 
