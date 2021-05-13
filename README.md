@@ -45,8 +45,6 @@ MVCの思想にのっとり、Model/View/Controllerを自作し連携させて�
 
 ![トップ画面：相対パス](images/top.png)
 
-![トップ画面：絶対パス](https://gyazo.com/1dca94cee7b75bab3e5b0e5e14121a77/raw)
-
 ## エピソード
 
 レッスン用のサンプル教材として作成しました。
